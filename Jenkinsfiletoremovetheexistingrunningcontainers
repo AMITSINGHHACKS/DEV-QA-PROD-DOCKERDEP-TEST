@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('Stopping existing container') {
+            steps {
+                sh 'docker stop htmlwebtest'
+            }
+        }
+        stage('Pruning existing container') {
+            steps {
+                sh 'docker container prune -f'
+            }
+        }
+    }
+}
