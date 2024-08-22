@@ -35,7 +35,7 @@ pipeline {
         stage ('Running the Container') {
             steps {
                 script {
-                    sh "docker run -it -d -p 9999:80 --name htmlwebtest ${IMAGE_NAME}:${IMAGE_TAG}"
+                    sh "docker run -it -d -p 9999:80 --name htmlwebtest ${IMAGE_NAME}:latest"
                 }
             }
         }
