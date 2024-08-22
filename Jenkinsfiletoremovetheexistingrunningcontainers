@@ -11,5 +11,12 @@ pipeline {
                 sh 'docker container prune -f'
             }
         }
+        stage ('Cleanup Artifacts') {
+            steps {
+                script {
+                    sh "docker rmi ${IMAGE_NAME}:latest"
+                }
+            }
+        }
     }
 }
