@@ -14,7 +14,7 @@ pipeline {
         stage ('Cleanup Artifacts') {
             steps {
                 script {
-                    sh "docker rmi ${IMAGE_NAME}:latest"
+                    sh "docker rmi amitsingh01/htmlwebapp:latest"
                 }
             }
         }
